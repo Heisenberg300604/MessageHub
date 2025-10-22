@@ -8,7 +8,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import ThemeToggle from "@/components/ui/theme-toggle";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import { 
   User, 
@@ -304,7 +303,6 @@ export default function Settings() {
                 <div className="space-y-2">
                   <Label htmlFor="theme">Theme</Label>
                   <div className="flex items-center gap-2">
-                    <ThemeToggle />
                     <span className="text-sm text-muted-foreground">System, Light, or Dark</span>
                   </div>
                 </div>
