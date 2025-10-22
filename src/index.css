@@ -1,0 +1,237 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 217 32% 17%;
+    
+    /* Surface & Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 217 32% 17%;
+    --surface: 216 33% 97%;
+    --surface-foreground: 217 32% 17%;
+    
+    /* Primary Brand - MessageHub Blue */
+    --primary: 220 91% 29%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 221 83% 53%;
+    --primary-dark: 220 100% 20%;
+    
+    /* Secondary - Purple Accent */
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 258 100% 80%;
+    --secondary-dark: 258 100% 50%;
+    
+    /* Platform Colors */
+    --whatsapp: 142 70% 49%;
+    --linkedin: 201 100% 35%;
+    --instagram: 329 69% 52%;
+    --telegram: 199 100% 40%;
+    --email: 213 27% 84%;
+    
+    /* UI States */
+    --muted: 216 18% 95%;
+    --muted-foreground: 215 14% 57%;
+    --accent: 216 18% 95%;
+    --accent-foreground: 217 32% 17%;
+    
+    /* Interactive Elements */
+    --border: 216 18% 87%;
+    --input: 216 18% 87%;
+    --ring: 220 91% 29%;
+    
+    /* Semantic Colors */
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --warning: 35 91% 65%;
+    --warning-foreground: 26 83% 14%;
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 91% 29%), hsl(221 83% 53%));
+    --gradient-secondary: linear-gradient(135deg, hsl(258 90% 66%), hsl(258 100% 80%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(216 33% 97%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.1), hsl(216 33% 97% / 0.05));
+    
+    /* Glass Effects */
+    --glass-bg: 0 0% 100% / 0.1;
+    --glass-border: 0 0% 100% / 0.2;
+    --glass-shadow: 0 8px 32px hsl(217 32% 17% / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Core Colors - Dark Mode */
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+    
+    /* Surface & Card Colors */
+    --card: 223 47% 6%;
+    --card-foreground: 213 31% 91%;
+    --surface: 221 39% 11%;
+    --surface-foreground: 213 31% 91%;
+    
+    /* Primary Brand - Brighter in Dark */
+    --primary: 221 83% 53%;
+    --primary-foreground: 222 47% 4%;
+    --primary-light: 220 100% 66%;
+    --primary-dark: 220 91% 29%;
+    
+    /* Secondary - Purple Accent */
+    --secondary: 258 100% 80%;
+    --secondary-foreground: 222 47% 4%;
+    --secondary-light: 258 100% 90%;
+    --secondary-dark: 258 90% 66%;
+    
+    /* Platform Colors - Adjusted for Dark */
+    --whatsapp: 142 70% 49%;
+    --linkedin: 201 100% 50%;
+    --instagram: 329 69% 65%;
+    --telegram: 199 100% 55%;
+    --email: 213 27% 30%;
+    
+    /* UI States */
+    --muted: 221 39% 11%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 221 39% 11%;
+    --accent-foreground: 213 31% 91%;
+    
+    /* Interactive Elements */
+    --border: 221 39% 11%;
+    --input: 221 39% 11%;
+    --ring: 221 83% 53%;
+    
+    /* Glass Effects - Dark Mode */
+    --glass-bg: 0 0% 0% / 0.2;
+    --glass-border: 0 0% 100% / 0.1;
+    --glass-shadow: 0 8px 32px hsl(0 0% 0% / 0.3);
+    
+    /* Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(220 100% 66%));
+    --gradient-secondary: linear-gradient(135deg, hsl(258 100% 80%), hsl(258 100% 90%));
+    --gradient-surface: linear-gradient(180deg, hsl(223 47% 6%), hsl(221 39% 11%));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.05), hsl(0 0% 100% / 0.02));
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass Effect Utilities */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .glass-subtle {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+  
+  /* Platform Indicators */
+  .platform-whatsapp { 
+    background-color: hsl(var(--whatsapp));
+    color: white;
+  }
+  
+  .platform-linkedin { 
+    background-color: hsl(var(--linkedin));
+    color: white;
+  }
+  
+  .platform-instagram { 
+    background-color: hsl(var(--instagram));
+    color: white;
+  }
+  
+  .platform-telegram { 
+    background-color: hsl(var(--telegram));
+    color: white;
+  }
+  
+  .platform-email { 
+    background-color: hsl(var(--email));
+    color: hsl(var(--foreground));
+  }
+  
+  /* Hover Animations */
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Custom Scrollbars */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground)) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted-foreground));
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
